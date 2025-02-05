@@ -13,7 +13,7 @@ _fragment=${FRAGMENT:-#branch=main}
 _name=colmap
 #fragment="#commit=5bea89263bf5f3ed623b8e6e6a5f022a0ed9c1de"
 pkgname=${_name}-git
-pkgver=3.8.r219.g6eb27c01
+pkgver=3.10.r213.g16b04119
 pkgrel=1
 pkgdesc="General-purpose Structure-from-Motion (SfM) and Multi-View Stereo (MVS) pipeline with a graphical and command-line interface."
 arch=('i686' 'x86_64')
@@ -25,7 +25,7 @@ conflicts=("$_name")
 depends=('cgal' 'ceres-solver' 'gflags' 'metis' 'suitesparse' 'freeglut' 'glew' 'google-glog' 'freeimage' 'libjpeg' 'boost-libs' 'qt5-base' 'flann')
 makedepends=('boost' 'cmake' 'eigen' 'git' 'ninja' 'python-sphinx' )
 if [ "$_BUILD_CUDA" == "ON" ] ; then 
-  makedepends+=('cuda<12')
+  makedepends+=('cuda<13')
   optdepends+=('libcudart.so: required for dense reconstruction')
 fi
 source=("${pkgname}::git+https://github.com/colmap/colmap.git${_fragment}"
