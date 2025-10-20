@@ -43,7 +43,7 @@ pkgver() {
 }
 
 prepare() {
-  sed -e '1 i\#include <cassert>' -i "${srcdir}"/colmap-git/src/colmap/sfm/observation_manager.cc
+  sed -e '1 i\#include <cassert>' -i "${srcdir}"/${pkgname}/src/colmap/sfm/observation_manager.cc
 }
 
 build() {
